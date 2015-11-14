@@ -1,0 +1,43 @@
+<div class="jumbotron">
+  <h1><%=@loo.location%></h1>
+  <p id="count"><%=((@loo.bok+@loo.chung+@loo.bun)/3).round(1)%> 점 (<%=@loo.comments.count%> 명)</p>
+
+  <%=form_tag "/home/ev", method: "post" do %>
+    <input type="hidden" name="id" value="<%=@loo.id%>">
+    <h1>복잡도</h1>
+    <span class="star-rating">
+      <input type="radio" name="rating" value="1"><i></i>
+      <input type="radio" name="rating" value="2"><i></i>
+      <input type="radio" name="rating" value="3"><i></i>
+      <input type="radio" name="rating" value="4"><i></i>
+      <input type="radio" name="rating" value="5"><i></i>
+    </span><br>
+    <h1>청결도</h1>
+    <span class="star-rating">
+      <input type="radio" name="rating2" value="1"><i></i>
+      <input type="radio" name="rating2" value="2"><i></i>
+      <input type="radio" name="rating2" value="3"><i></i>
+      <input type="radio" name="rating2" value="4"><i></i>
+      <input type="radio" name="rating2" value="5"><i></i>
+    </span><br>
+    <h1>분위기</h1>
+    <span class="star-rating">
+      <input type="radio" name="rating3" value="1"><i></i>
+      <input type="radio" name="rating3" value="2"><i></i>
+      <input type="radio" name="rating3" value="3"><i></i>
+      <input type="radio" name="rating3" value="4"><i></i>
+      <input type="radio" name="rating3" value="5"><i></i>
+    </span><br><br><br>
+    <input type='checkbox' name='bidet' value='1'>비데를 사용했으면 체크하세요
+
+    <br>
+
+    <textarea class="form-control" name="msg" placeholder="별점 체크 후 평가를 남겨주세요"></textarea>
+    <br>
+
+    <button class="btn btn-success" href="#" role="button" onclick="button()">평가하기</button>
+    <a href='/home' class='btn btn-warning'>뒤로가기</a>
+
+  <% end %>
+
+</div>

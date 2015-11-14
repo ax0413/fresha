@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  loo_id: 1
+  bidet: 1
+  bok: 1
+  chung: 1
+  bun: 1
+  comment: MyText
+
+two:
+  loo_id: 1
+  bidet: 1
+  bok: 1
+  chung: 1
+  bun: 1
+  comment: MyText
