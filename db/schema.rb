@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 20151113074721) do
   create_table "comments", force: :cascade do |t|
     t.integer  "loo_id"
     t.integer  "bidet"
-    t.integer  "bok"
-    t.integer  "chung"
-    t.integer  "bun"
+    t.integer  "bok",        default: 0
+    t.integer  "chung",      default: 0
+    t.integer  "bun",        default: 0
     t.text     "comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "loos", force: :cascade do |t|
