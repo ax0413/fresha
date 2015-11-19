@@ -10,15 +10,19 @@
 </head>
 <body>
 <div class="container">
-  <div class="header clearfix">
-      <nav>
-        <ul class="nav nav-pills pull-right">
-        </ul>
-      </nav>
-      <h3 class="text-muted">fresha</h3>
-    </div>
 
-  <%= yield %>
+    <div class="jumbotron">
+
+        <h1>
+            <%= image_tag("logo", class: 'fresha-logo') %>
+        </h1>
+        <br>
+        <p class="lead">서울대학교 화장실 정보</p>
+        <p>
+            <br>
+            <%= link_to '시작하기', loos_path, class: 'btn btn-lg btn-default', role: 'button' %>
+        </p>
+    </div>
 </div>
 
 </body>
