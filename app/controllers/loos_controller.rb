@@ -15,7 +15,7 @@ class LoosController < ApplicationController
       msg=params[:msg]
     end
     Comment.create(loo_id: params[:id], bidet: params[:bidet], bok: params[:rating].to_i, chung: params[:rating2].to_i, bun: params[:rating3].to_i, comment: msg)
-    redirect_to :action => "detail", :id => params[:id]
+    redirect_to :action => "show", :id => params[:id]
   end
   
   def rating
