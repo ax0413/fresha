@@ -1,9 +1,10 @@
 class CreateLoos < ActiveRecord::Migration
   def change
     create_table :loos do |t|
-      t.string :location
+      t.string :bname
       t.integer :floor
-
+      
+      
       t.timestamps null: false
     end
   end
