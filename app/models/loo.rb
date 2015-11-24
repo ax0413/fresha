@@ -33,5 +33,7 @@ class Loo < ActiveRecord::Base
       total.to_f / comments.count
     end
   end
+  
+    
 
 end
