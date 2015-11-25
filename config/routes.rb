@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   
   get ':controller(/:action(/:id))'
   post ':controller(/:action(/:id))'
+  
+  get '/choose' => 'choose#index'
 
   root 'static_pages#home'
 
