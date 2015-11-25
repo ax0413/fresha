@@ -4,7 +4,6 @@ class CreateLoos < ActiveRecord::Migration
       t.string :bname
       t.integer :floor
       
-      
       t.timestamps null: false
     end
   end
