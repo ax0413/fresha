@@ -1,8 +1,14 @@
 <div class="jumbotron">
+  <div class="row">
   <h1><%=@loo.location%></h1>
   <p id="count"><%=((@loo.bok+@loo.chung+@loo.bun)/3).round(2)%> 점 (<%=@loo.comments.count%> 명)</p>
+  <div class="col-sm-8 col-sm-offset-2" style="margin-bottom: 20px;">
+    <div style="height:40px;">
+    <div style="width: 25%; float: left; vertical-align: middle; line-height: 40px;">
   전체 평점
-  <span class="star-rating">
+  </div>
+  <div style="width: 75%; float: left;">
+  <span class="star-rating md">
     <% 1.upto(5) do |i| %>
       <% if i == ((@loo.bok+@loo.chung+@loo.bun)/3).round(0) %>
         <i class="on"></i>
@@ -10,9 +16,16 @@
         <i></i>
       <% end %>
     <% end %>
-  </span><br>
-  복잡도
-  <span class="star-rating">
+  </span>
+  </div>
+  </div>
+  <div style="width:100%; height: 1px; background-color: lightgray; margin: 3px 0 10px 0">&nbsp;</div>
+  <div style="height:40px;">
+  <div style="width:25%; float: left; height: 40px; line-height: 40px;">
+  복잡도 
+  </div>
+  <div style="width: 75%; float: left; height: 40px;">
+  <span class="star-rating md">
     <% 1.upto(5) do |i| %>
       <% if i == @loo.bok.round(0) %>
         <i class="on"></i>
@@ -20,9 +33,15 @@
         <i></i>
       <% end %>
     <% end %>
-  </span><br>
+  </span>
+  </div>
+  </div>
+  <div style="height:40px;">
+  <div style="width:25%; float: left; height: 40px; line-height: 40px;">  
   청결도
-  <span class="star-rating">
+  </div>
+  <div style="width: 75%; float: left; height: 40px;">
+  <span class="star-rating md">
     <% 1.upto(5) do |i| %>
       <% if i == @loo.chung.round(0) %>
         <i class="on"></i>
@@ -30,9 +49,15 @@
         <i></i>
       <% end %>
     <% end %>
-  </span><br>
+  </span>
+  </div>
+  </div>
+  <div style="height:40px;">
+  <div style="width:25%; float: left; height: 40px; line-height: 40px;"> 
   분위기
-  <span class="star-rating">
+  </div>
+  <div style="width: 75%; float: left; height: 40px;">
+  <span class="star-rating md">
     <% 1.upto(5) do |i| %>
       <% if i == @loo.bun.round(0) %>
         <i class="on"></i>
@@ -41,14 +66,13 @@
       <% end %>
     <% end %>
   </span>
-
-
-    <br>
-    <br>
+  </div>
+  </div>
+  </div>
   <a href='/loos/rating/<%=@loo.id %>' class='btn btn-success'>평가하기</a>
   <a href='/loos' class='btn btn-warning'>뒤로가기</a>
 
-
+  </div>
 </div>
 
 <div class="row">
@@ -64,10 +88,10 @@
             <% end %>
           <% end %>
         </span>
-        
+        <br>
         <%=c.created_at.in_time_zone("Seoul").strftime('%F %T에 작성')%>
         <%if c.bidet==1%>
-          <p class='text-info'><비데 사용자></p>
+        <p class='text-info'><비데 사용자></p>
         <% end %>
         <p><%=c.comment%></p>
       </div>
