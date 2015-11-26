@@ -1,4 +1,6 @@
 class Loo < ActiveRecord::Base
+    belongs_to :college
+    belongs_to :building
     has_many:comments
   def bok
     total = 0

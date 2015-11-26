@@ -11,15 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119032735) do
+ActiveRecord::Schema.define(version: 20151119032647) do
 
   create_table "buildings", force: :cascade do |t|
     t.integer  "college_id"
+    t.string   "bname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "colleges", force: :cascade do |t|
+    t.string   "cname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,18 +38,11 @@ ActiveRecord::Schema.define(version: 20151119032735) do
   end
 
   create_table "loos", force: :cascade do |t|
-    t.string   "location"
+    t.string   "bname"
     t.integer  "floor"
     t.float    "avg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "wcs", force: :cascade do |t|
-    t.integer  "college_id"
-    t.integer  "building_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
 end
