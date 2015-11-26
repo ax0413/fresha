@@ -1,0 +1,10 @@
+<h1>검색</h1>
+<div>
+  <form action:'/search'>
+  <input type='string' name='search' placeholder='입력'>
+  <input type='submit'>
+  </form>
+</div>
+<% @search.each do |loo| %>
+    <%= link_to(loo.bname, loo) %>
+<% end %>

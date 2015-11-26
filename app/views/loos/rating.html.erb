@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h1><%=@loo.location%></h1>
+  <h1><%=@loo.bname%></h1>
   <p id="count"><%=((@loo.bok+@loo.chung+@loo.bun)/3).round(1)%> 점 (<%=@loo.comments.count%> 명)</p>
 
   <%=form_tag "/loos/ev", method: "post" do %>
@@ -27,10 +27,10 @@
       <input type="radio" name="rating3" value="3"><i></i>
       <input type="radio" name="rating3" value="4"><i></i>
       <input type="radio" name="rating3" value="5"><i></i>
-    </span><br><br><br>
+    </span><br><br>
     <input type='checkbox' name='bidet' value='1'>비데를 사용했으면 체크하세요
 
-    <br>
+    <br><br>
 
     <textarea class="form-control" name="msg" placeholder="별점 체크 후 평가를 남겨주세요"></textarea>
     <br>
