@@ -17,16 +17,15 @@
         <ul class="nav nav-pills pull-right">
         </ul>
       </nav>
-      <h3 class="text-muted">fresha</h3>
+       <%= link_to(root_path, class: 'navbar-brand') do %>
+         <h3 class="text-muted">fresha</h3>
+       <% end %>
       <div class="row">
         <div class="col-md-3 col-md-offset-10"><a href='/search'>검색</a> <a href='/rank'>랭킹</a></div>
       </div>
       
   </div>
 
-       <%= link_to(root_path, class: 'navbar-brand') do %>
-         <h3 class="text-muted">fresha</h3>
-       <% end %>
     </div>
 
   <%= yield %>

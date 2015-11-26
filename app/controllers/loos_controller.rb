@@ -30,7 +30,7 @@ class LoosController < ApplicationController
   end
   
   def rank
-    @rank = Loo.order(:avg).reverse
+    @rank = Loo.order(:avg).reverse.take(10)
   end
 
 end
