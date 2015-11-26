@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/rank' => 'loos#rank'
   get ':controller(/:action(/:id))'
   post ':controller(/:action(/:id))'
+  get '/choose' => 'choose#index'
+
   root 'static_pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
