@@ -3,7 +3,7 @@ class CreateLoos < ActiveRecord::Migration
     create_table :loos do |t|
       t.string :bname
       t.integer :floor
-      t.float :avg
+      t.float :avg, default: 0
 
       t.timestamps null: false
     end

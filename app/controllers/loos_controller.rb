@@ -5,7 +5,7 @@ class LoosController < ApplicationController
   end
 
   def search
-    @search = Loo.where("location LIKE ?", "#{params[:search]}")
+    @search = Loo.where("bname LIKE ?", "#{params[:search]}")
   end
   
   def show
