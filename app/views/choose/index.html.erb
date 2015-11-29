@@ -1,18 +1,18 @@
-
-
+<% @buildings.each do |b| %>
 <div class="row">
     <div class="col-md-6">
         <ul>
-	        <% @buildings.each do |b| %>
 	        <li><%=b.bname%></li>
-	        <% end %>
         </ul>
     </div>
     <div class="col-md-6">
         <ul>
 	        <% @loos.each do |l| %>
-	        <li><%=l.floor%></li>
+	            <% if b.bname==l.bname %>
+	            <li><%=l.floor%></li>
+	            <% end %>
 	        <% end %>
         </ul>
     </div>
 </div>
+<% end %>
