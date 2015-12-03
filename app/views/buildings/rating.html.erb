@@ -1,9 +1,9 @@
 <div class="jumbotron">
-  <h1><%=@loo.bname%></h1>
-  <p id="count"><%=((@loo.bok+@loo.chung+@loo.bun)/3).round(1)%> 점 (<%=@loo.comments.count%> 명)</p>
+  <h1><%=@building.bname%></h1>
+  <p id="count"><%=((@building.bok+@building.chung+@building.bun)/3).round(1)%> 점 (<%=@building.comments.count%> 명)</p>
 
-  <%=form_tag "/loos/ev", method: "post" do %>
-    <input type="hidden" name="id" value="<%=@loo.id%>">
+  <%=form_tag "/buildings/ev", method: "post" do %>
+    <input type="hidden" name="id" value="<%=@building.id%>">
     <h1>복잡도</h1>
     <span class="star-rating">
       <input type="radio" name="rating" value="1"><i></i>
@@ -36,7 +36,7 @@
     <br>
 
     <button class="btn btn-success" href="#" role="button" onclick="button()">평가하기</button>
-    <a href='/loos/<%=@loo.id %>' class='btn btn-warning'>뒤로가기</a>
+    <a href='/buildings/<%=@building.id %>' class='btn btn-warning'>뒤로가기</a>
 
   <% end %>
 

@@ -5,6 +5,6 @@
   <input type='submit'>
   </form>
 </div>
-<% @search.each do |loo| %>
-  <%= link_to(loo.bname, loo) %><br>
+<% @search.each do |building| %>
+  <%= link_to(building.bname, building) %><br>
 <% end %>

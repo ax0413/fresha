@@ -11,13 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119032647) do
+ActiveRecord::Schema.define(version: 20151203133245) do
 
   create_table "buildings", force: :cascade do |t|
+    t.integer  "building_id"
+    t.integer  "floor"
+    t.float    "avg",         default: 0.0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "college_id"
     t.string   "bname"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "colleges", force: :cascade do |t|
@@ -27,22 +30,14 @@ ActiveRecord::Schema.define(version: 20151119032647) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "loo_id"
+    t.integer  "building_id"
     t.integer  "bidet"
-    t.integer  "bok",        default: 0
-    t.integer  "chung",      default: 0
-    t.integer  "bun",        default: 0
+    t.integer  "bok",         default: 0
+    t.integer  "chung",       default: 0
+    t.integer  "bun",         default: 0
     t.text     "comment"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  create_table "loos", force: :cascade do |t|
-    t.string   "bname"
-    t.integer  "floor"
-    t.float    "avg",        default: 0.0
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
 end
