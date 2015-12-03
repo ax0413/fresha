@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :loos
   
+  get '/search' => 'loos#search'
+  get '/rank' => 'loos#rank'
   get ':controller(/:action(/:id))'
   post ':controller(/:action(/:id))'
   
