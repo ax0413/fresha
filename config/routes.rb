@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  resources :buildings
+  resources :buildings, only: :show
   
+  get '/main' => 'static_pages#main'
   get '/search' => 'buildings#search'
   get '/rank' => 'buildings#rank'
-  get '/buildings/select/:college_id' => 'buildings#select', as: :buildings_select
-  get '/colleges/select' => 'colleges#select'
+  get '/colleges' => 'colleges#index'
+  get '/colleges/:slug/buildings' => 'colleges#buildings', as: 'college_buildings'
   get ':controller(/:action(/:id))'
   post ':controller(/:action(/:id))'
 

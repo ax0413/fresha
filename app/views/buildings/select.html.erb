@@ -1,7 +1,0 @@
-<ul>
-	<% @buildings.each do |b| %>
-		<p class="text-center">
-			<%= link_to b.bname, building_path(b.id), role: 'button', class: 'btn btn-default btn-lg btn-block' %>
-		</p>
-	<% end %>
-</ul>

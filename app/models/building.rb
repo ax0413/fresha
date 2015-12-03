@@ -1,6 +1,9 @@
 class Building < ActiveRecord::Base
+    extend FriendlyId
+    friendly_id :bname, use: :slugged
     belongs_to :college
     has_many :comments
+    
   def bok
     total = 0
     comments.each do |c|
@@ -35,4 +38,7 @@ class Building < ActiveRecord::Base
     end
   end
 
+    def normalize_friendly_id(input)
+        input.to_s.to_slug.normalize.to_s
+    end
 end

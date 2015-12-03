@@ -1,20 +1,10 @@
 class BuildingsController < ApplicationController
-
-  def index
-    @buildings = Building.all
-  end
-  
-  def select
-    college_id = params[:college_id]
-    @buildings = Building.where(college_id: college_id).order(:bname)
-  end
-
   def search
     @search = Building.where("bname LIKE ?", "#{params[:search]}")
   end
   
   def show
-    @building = Building.find(params[:id])
+    @building = Building.find_by(slug: params[:id])
   end
   
   def ev

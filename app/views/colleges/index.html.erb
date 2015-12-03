@@ -1,0 +1,5 @@
+<% @colleges.each do |c| %>
+	<p class="text-center">
+		<%= link_to c.cname, college_buildings_path(c.slug), role: 'button', class: 'btn btn-default btn-lg btn-block' %>
+	</p>
+<% end %>
