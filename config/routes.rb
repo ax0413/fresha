@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  resources :loos
+  resources :buildings, only: :show
   
-  get '/search' => 'loos#search'
-  get '/rank' => 'loos#rank'
+  get '/main' => 'static_pages#main'
+  get '/search' => 'buildings#search'
+  get '/rank' => 'buildings#rank'
+  get '/colleges' => 'colleges#index'
+  get '/colleges/:slug/buildings' => 'colleges#buildings', as: 'college_buildings'
   get ':controller(/:action(/:id))'
   post ':controller(/:action(/:id))'
-  
-  get '/choose' => 'choose#index'
-  get '/choose_col' => 'chooose_col#index'
 
   root 'static_pages#home'
 

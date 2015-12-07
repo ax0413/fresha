@@ -11,28 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119032647) do
+ActiveRecord::Schema.define(version: 20151203143554) do
 
   create_table "buildings", force: :cascade do |t|
+    t.integer  "building_id"
+    t.integer  "floor"
+    t.float    "avg",         default: 0.0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "college_id"
     t.string   "bname"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "slug"
   end
+
+  add_index "buildings", ["slug"], name: "index_buildings_on_slug"
 
   create_table "colleges", force: :cascade do |t|
     t.string   "cname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "slug"
   end
 
+  add_index "colleges", ["slug"], name: "index_colleges_on_slug"
+
   create_table "comments", force: :cascade do |t|
-    t.integer  "loo_id"
+    t.integer  "building_id"
     t.integer  "bidet"
-    t.integer  "bok",        default: 0
-    t.integer  "chung",      default: 0
-    t.integer  "bun",        default: 0
+    t.integer  "bok",         default: 0
+    t.integer  "chung",       default: 0
+    t.integer  "bun",         default: 0
     t.text     "comment"
+<<<<<<< HEAD
     t.string   "floor",      default: "?"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -44,6 +54,10 @@ ActiveRecord::Schema.define(version: 20151119032647) do
     t.float    "avg",        default: 0.0
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+=======
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+>>>>>>> 4435b540aa2d851405c1dde72f02d4ed4fa0faf9
   end
 
 end

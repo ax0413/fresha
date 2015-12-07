@@ -65,6 +65,21 @@ body {
   margin-top: 28px;
 }
 
+.rank-box {
+  padding: 8px 4px 8px 4px;
+  margin: 5px 0 5px 0;
+}
+
+div#myButton {
+    height: 35px;
+    margin-top: 14px;
+    // height: 100px;
+    border: none;
+    & img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
@@ -83,6 +98,9 @@ body {
     border-bottom: 0;
   }
 }
+
+
+
 // 가져오기 끝
 
 // 별점 디자인 가져오기
@@ -157,7 +175,6 @@ body {
   width: 150px;
   height: 30px;
 }
-
 
 
 .small {

@@ -1,8 +1,8 @@
 <div class="jumbotron">
   <div class="row">
-  <h1><%=@loo.bname%></h1>
-  <p id="count"><%=((@loo.bok+@loo.chung+@loo.bun)/3).round(2)%> 점 (<%=@loo.comments.count%> 명)</p>
-  <div class="col-sm-8 col-sm-offset-2" style="margin-bottom: 20px;">
+  <h1><%=@building.bname%></h1>
+  <p id="count"><%=((@building.bok+@building.chung+@building.bun)/3).round(2)%> 점 (<%=@building.comments.count%> 명)</p>
+  <div class="col-sm-7 col-sm-offset-3" style="margin-bottom: 20px;">
     <div style="height:40px;">
     <div style="width: 25%; float: left; vertical-align: middle; line-height: 40px;">
   전체 평점
@@ -10,7 +10,7 @@
   <div style="width: 75%; float: left;">
   <span class="star-rating md">
     <% 1.upto(5) do |i| %>
-      <% if i == ((@loo.bok+@loo.chung+@loo.bun)/3).round(0) %>
+      <% if i == ((@building.bok+@building.chung+@building.bun)/3).round(0) %>
         <i class="on"></i>
       <% else %>
         <i></i>
@@ -27,7 +27,7 @@
   <div style="width: 75%; float: left; height: 40px;">
   <span class="star-rating md">
     <% 1.upto(5) do |i| %>
-      <% if i == @loo.bok.round(0) %>
+      <% if i == @building.bok.round(0) %>
         <i class="on"></i>
       <% else %>
         <i></i>
@@ -43,7 +43,7 @@
   <div style="width: 75%; float: left; height: 40px;">
   <span class="star-rating md">
     <% 1.upto(5) do |i| %>
-      <% if i == @loo.chung.round(0) %>
+      <% if i == @building.chung.round(0) %>
         <i class="on"></i>
       <% else %>
         <i></i>
@@ -59,7 +59,7 @@
   <div style="width: 75%; float: left; height: 40px;">
   <span class="star-rating md">
     <% 1.upto(5) do |i| %>
-      <% if i == @loo.bun.round(0) %>
+      <% if i == @building.bun.round(0) %>
         <i class="on"></i>
       <% else %>
         <i></i>
@@ -78,15 +78,15 @@
   
   
   </div>
-  <a href='/loos/rating/<%=@loo.id %>' class='btn btn-success'>평가하기</a>
-  <a href='/loos' class='btn btn-warning'>뒤로가기</a>
+  <a href='/buildings/rating/<%=@building.id %>' class='btn btn-success'>평가하기</a>
+  <a href='/buildings' class='btn btn-warning'>뒤로가기</a>
 
   </div>
 </div>
 
 <div class="row">
   <div class="col-lg-12">
-    <% @loo.comments.reverse.each do |c| %>
+    <% @building.comments.reverse.each do |c| %>
       <div class="well">
         <span class="star-rating small">
           <% 1.upto(5) do |i| %>

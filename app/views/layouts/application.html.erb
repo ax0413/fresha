@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
+  <%= stylesheet_link_tag    'bootstrap', media: 'all', 'data-turbolinks-track' => true %>
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -10,19 +10,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
+  <title>fresha</title>
 </head>
 <body class="container">
   <div class="header clearfix">
-      <nav>
-        <ul class="nav nav-pills pull-right">
-        </ul>
-      </nav>
-       <%= link_to(root_path, class: 'navbar-brand') do %>
+       <%= link_to(main_path, class: 'navbar-brand') do %>
          <h3 class="text-muted">fresha</h3>
        <% end %>
-      <div class="row">
-        <div class="col-md-3 col-md-offset-10"><a href='/search'>검색</a> <a href='/rank'>랭킹</a></div>
-      </div>
+  
+  <div id="myButton" class="pull-right">
+      <%= link_to search_path do %>
+        <%= image_tag "search", alt: 'submit' %>
+      <% end %>
+     </div>
       
   </div>
 
