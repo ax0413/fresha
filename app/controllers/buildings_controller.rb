@@ -13,11 +13,16 @@ class BuildingsController < ApplicationController
     else
       msg=params[:msg]
     end
-    Comment.create(building_id: params[:id], bidet: params[:bidet], bok: params[:rating].to_i, chung: params[:rating2].to_i, bun: params[:rating3].to_i, comment: msg)
+    if params[:floor].length==0
+      fl='?'
+    else
+      fl=params[:floor]
+    end
+    Comment.create(building_id: params[:id], bidet: params[:bidet], bok: params[:rating].to_i, chung: params[:rating2].to_i, bun: params[:rating3].to_i, comment: msg, floor: fl)
     @building = Building.find(params[:id])
     @building.avg=(@building.bok+@building.bun+@building.chung)/3
     @building.save
-    redirect_to :action => "show", :id => params[:id]
+    redirect_to :action => "show", :id => @building.slug
   end
   
   def rating
