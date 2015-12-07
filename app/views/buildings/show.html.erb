@@ -75,7 +75,11 @@
   <% if p!=0%>
     <p class= text-info>비데가 사용된 적 있는 화장실입니다.</p>
   <% end %>
-  
+  <p class= text-info>비데가 확인 된 곳<br>
+  <% @bidetfloor.each do |c| %>
+    <%=c+'층'  %>
+  <% end %>
+  </p>
   
   </div>
   <a href='/buildings/rating/<%=@building.id %>' class='btn btn-success'>평가하기</a>

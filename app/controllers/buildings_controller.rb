@@ -5,6 +5,14 @@ class BuildingsController < ApplicationController
   
   def show
     @building = Building.find_by(slug: params[:id])
+    bidet = @building.comments.where(:bidet => 1)
+    arr=[]
+    bidet.each do |b|
+      arr.push(b.floor)
+    end
+    arr=arr.uniq.sort
+    arr.delete('?')
+    @bidetfloor=arr
   end
   
   def ev
