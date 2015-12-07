@@ -33,8 +33,9 @@ ActiveRecord::Schema.define(version: 20151119032647) do
     t.integer  "chung",      default: 0
     t.integer  "bun",        default: 0
     t.text     "comment"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "floor",      default: "?"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "loos", force: :cascade do |t|

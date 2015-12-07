@@ -18,7 +18,12 @@ class LoosController < ApplicationController
     else
       msg=params[:msg]
     end
-    Comment.create(loo_id: params[:id], bidet: params[:bidet], bok: params[:rating].to_i, chung: params[:rating2].to_i, bun: params[:rating3].to_i, comment: msg)
+    if params[:floor].length==0
+      floor='?'
+    else
+      floor=params[:floor]
+    end
+    Comment.create(loo_id: params[:id], bidet: params[:bidet], bok: params[:rating].to_i, chung: params[:rating2].to_i, bun: params[:rating3].to_i, comment: msg, floor: floor)
     @loo = Loo.find(params[:id])
     @loo.avg=(@loo.bok+@loo.bun+@loo.chung)/3
     @loo.save

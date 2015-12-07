@@ -68,6 +68,15 @@
   </span>
   </div>
   </div>
+  <% p=0%>
+  <% @loo.comments.each do |c| %>
+    <% p+= c.bidet %>
+  <% end %>
+  <% if p!=0%>
+    <p class= text-info>비데가 사용된 적 있는 화장실입니다.</p>
+  <% end %>
+  
+  
   </div>
   <a href='/loos/rating/<%=@loo.id %>' class='btn btn-success'>평가하기</a>
   <a href='/loos' class='btn btn-warning'>뒤로가기</a>
@@ -90,6 +99,7 @@
         </span>
         <br>
         <%=c.created_at.in_time_zone("Seoul").strftime('%F %T에 작성')%>
+        <p class='text-warning'><<%='사용한 곳: '+c.floor+'층'%>></p>
         <%if c.bidet==1%>
         <p class='text-info'><비데 사용자></p>
         <% end %>

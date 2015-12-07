@@ -28,11 +28,13 @@
       <input type="radio" name="rating3" value="4"><i></i>
       <input type="radio" name="rating3" value="5"><i></i>
     </span><br><br>
-    <input type='checkbox' name='bidet' value='1'>비데를 사용했으면 체크하세요
+    <input type='hidden' name='bidet' value='0'>
+    <input type='checkbox' name='bidet' value='1'>비데를 사용했으면 체크하세요<br>
+    <input type='integer' name='floor' placeholder='?' size='2'>층
 
     <br><br>
 
-    <textarea class="form-control" name="msg" placeholder="별점 체크 후 평가를 남겨주세요"></textarea>
+    <textarea class="form-control" name="msg" placeholder="별점 체크 후 평가를 남겨주세요" style='resize:none;'></textarea>
     <br>
 
     <button class="btn btn-success" href="#" role="button" onclick="button()">평가하기</button>

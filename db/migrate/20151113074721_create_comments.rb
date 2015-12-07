@@ -7,6 +7,7 @@ class CreateComments < ActiveRecord::Migration
       t.integer :chung, default: 0
       t.integer :bun, default: 0
       t.text :comment
+      t.string :floor
 
       t.timestamps null: false
     end
