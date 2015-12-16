@@ -1,2 +1,71 @@
-<h3><%= link_to '랭킹', rank_path %></h3>
-<h3><%= link_to '평가하기', colleges_path %></h3>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="well well-sm">
+      <div class="comment-now">
+      <h5>지금 <%= @comment.building.bname %>화장실에서는...</h5>
+        <i class="fa fa-quote-left "></i>
+        <div class="rating">
+          <span class="star-rating small">
+            <% 1.upto(5) do |i| %>
+              <% if i == (@comment.bok+@comment.chung+@comment.bun)/3 %>
+                <i class="on"></i>
+              <% else %>
+                <i></i>
+              <% end %>
+            <% end %>
+          </span>
+        </div>
+        <div class="comment">
+          <em>
+            <%= link_to @comment.comment, building_path(@comment.building, anchor: "comment-#{@comment.id}") %>
+          </em>
+        </div>
+        <i class="fa fa-quote-right"></i>
+      </div>
+        <!--<div class="clearfix">-->
+        <!--</div>-->
+    </div>
+
+  </div>
+</div>
+<div class="row" style="padding-top: 10vh;">
+    <div class="col-xs-4 col-sm-4  text-center main-button">
+      <%= link_to rank_path do %>
+        <%= image_tag "rank3", alt: '랭킹' %><br>
+         <div class="main-now">
+          <h5 style="margin-top: 5px; color: #95A5A6;">랭킹</h5>
+       <% end %>
+        </div>
+      </div> 
+      
+      
+    <div class="col-xs-4 col-sm-4 text-center main-button">
+      <%= link_to colleges_path do %>
+        <%= image_tag "check3", alt: '평가하기' %>
+         <div class="main-now">   
+          <h5 style="margin-top: 5px; color: #95A5A6;">화장실 탐방</h5>
+      <% end %>
+    </div>
+  </div> 
+  
+
+  <div class="col-xs-4 col-sm-4 text-center main-button">
+      <%= link_to newcomment_path do %>
+        <%= image_tag "comment", alt: '최근평가보기' %>
+         <div class="main-now">   
+          <h5 style="margin-top: 5px; color: #95A5A6;">최근 평가</h5>
+      <% end %>
+    </div>
+  </div>
+</div>
+  
+ <div class="row" style="padding-top: 50px;">
+  <div class="col-xs-6 col-xs-offset-3 text-center main-button">
+  <a class="btn btn-default btn-sm pledge-button" href="/pledge">
+    <i class="fa fa-bullseye"></i>  fresha pledge
+  </a>
+  </div>
+
+  
+</div>
+

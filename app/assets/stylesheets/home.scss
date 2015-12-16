@@ -6,6 +6,20 @@ body {
   padding-bottom: 20px;
 }
 
+.rank-icon {
+  max-width: 5%;
+}
+
+
+
+.fresha-logo {
+  max-width: 50%;
+}
+
+.lead {
+  margin-top: 25px;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -13,13 +27,36 @@ body {
   
 }
 
+
 .navbar-brand {
-  padding-top: 10px;
+    & img {
+        height: 25px;
+    }
+}
+#myButton {
+    padding-right: 1em;
+}
+
+.main-button {
+  padding: 0 4px 0 4px;
+  & img {
+    width: 95%
+  }
+}
+
+.pledge-button {
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #eb9898;
+}
+
+.building-button {
+  color: #828282;
 }
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  // border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
 }
 /* Make the masthead heading the same height as the navigation */
@@ -52,10 +89,10 @@ body {
   border-bottom: 1px solid #e5e5e5;
   padding-top: 5px;
 }
-.jumbotron .btn {
-  padding: 14px 24px;
-  font-size: 21px;
-}
+// .jumbotron .btn {
+//   padding: 14px 24px;
+//   font-size: 21px;
+// }
 
 /* Supporting marketing content */
 .marketing {
@@ -184,4 +221,22 @@ div#myButton {
 
 .on {
 	opacity: 1 !important;
+}
+
+.button-style {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn-show {
+  background-color: #84a8ca;
+}
+
+.btn-show2 {
+  background-color: #ff906e;
+}
+
+.btn-home {
+  background-color: #b0afb0;
+  color: #ffffff;
 }

@@ -1101,13 +1101,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #84a8ca;
+  color: #ffffff;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #84a8ca;
-  text-decoration: underline;
+  color: #ffffff;
 }
 a:focus {
   outline: thin dotted;
@@ -1296,7 +1295,7 @@ p {
 }
 .lead {
   margin-bottom: 21px;
-  font-size: 17px;
+  font-size: 25px;
   font-weight: 300;
   line-height: 1.4;
 }
@@ -2573,7 +2572,7 @@ output {
 .form-control:focus {
   border-color: #2c3e50;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(44, 62, 80, 0.6);
+  -webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,.075), 0 0 8px rgba(44, 62, 80, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(44, 62, 80, 0.6);
 }
 .form-control::-moz-placeholder {
@@ -3065,26 +3064,27 @@ fieldset[disabled] a.btn {
 }
 .btn-default {
   color: #ffffff;
-  background-color: #95a5a6;
-  border-color: #95a5a6;
+  background-color: #dce4ec;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .btn-default:focus,
 .btn-default.focus {
   color: #ffffff;
-  background-color: #798d8f;
-  border-color: #566566;
+  background-color: #84a8ca;
+  border-color: #84a8ca;
 }
 .btn-default:hover {
   color: #ffffff;
-  background-color: #798d8f;
-  border-color: #74898a;
+  background-color: #84a8ca;
+  border-color: #84a8ca;
 }
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
   color: #ffffff;
   background-color: #798d8f;
-  border-color: #74898a;
+  border-color: #798d8f;
 }
 .btn-default:active:hover,
 .btn-default.active:hover,
@@ -3096,8 +3096,8 @@ fieldset[disabled] a.btn {
 .btn-default.active.focus,
 .open > .dropdown-toggle.btn-default.focus {
   color: #ffffff;
-  background-color: #687b7c;
-  border-color: #566566;
+  background-color: #798d8f;
+  border-color: #798d8f;
 }
 .btn-default:active,
 .btn-default.active,
@@ -3186,19 +3186,19 @@ fieldset[disabled] .btn-primary.focus {
 .btn-success.focus {
   color: #ffffff;
   background-color: #5b95cc;
-  border-color: #0a4b3e;
+  border-color: #3775b0;
 }
 .btn-success:hover {
   color: #ffffff;
   background-color: #5b95cc;
-  border-color: #3581cA;
+  border-color: #5b95cc;
 }
 .btn-success:active,
 .btn-success.active,
 .open > .dropdown-toggle.btn-success {
   color: #ffffff;
   background-color: #5b95cc;
-  border-color: #3581cA;
+  border-color: #5b95cc;
 }
 .btn-success:active:hover,
 .btn-success.active:hover,
@@ -3210,8 +3210,8 @@ fieldset[disabled] .btn-primary.focus {
 .btn-success.active.focus,
 .open > .dropdown-toggle.btn-success.focus {
   color: #ffffff;
-  background-color: #0e6f5c;
-  border-color: #0a4b3e;
+  background-color: #39568a;
+  border-color: #39568a;
 }
 .btn-success:active,
 .btn-success.active,
@@ -3300,19 +3300,19 @@ fieldset[disabled] .btn-info.focus {
 .btn-warning.focus {
   color: #ffffff;
   background-color: #ff784e;
-  border-color: #7f5006;
+  border-color: #ff784e;
 }
 .btn-warning:hover {
   color: #ffffff;
   background-color: #ff784e;
-  border-color: ef410a;
+  border-color: #ff784e;
 }
 .btn-warning:active,
 .btn-warning.active,
 .open > .dropdown-toggle.btn-warning {
   color: #ffffff;
   background-color: #ff784e;
-  border-color: ef410a;
+  border-color: #ff784e;
 }
 .btn-warning:active:hover,
 .btn-warning.active:hover,
@@ -3324,8 +3324,8 @@ fieldset[disabled] .btn-info.focus {
 .btn-warning.active.focus,
 .open > .dropdown-toggle.btn-warning.focus {
   color: #ffffff;
-  background-color: #a66908;
-  border-color: #7f5006;
+  background-color: #c26041;
+  border-color: #c26041;
 }
 .btn-warning:active,
 .btn-warning.active,
@@ -3440,10 +3440,12 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-lg,
 .btn-group-lg > .btn {
-  padding: 18px 27px;
-  font-size: 19px;
+  padding: 10px 23px;
+  font-size: 15px;
   line-height: 1.3333333;
   border-radius: 6px;
+  background-color: #d3dfea;
+  
 }
 .btn-sm,
 .btn-group-sm > .btn {
@@ -3630,7 +3632,7 @@ tbody.collapse.in {
 .navbar-fixed-bottom .dropdown .caret {
   border-top: 0;
   border-bottom: 4px dashed;
-  border-bottom: 4px solid \9;
+  border-bottom: 4px solid;
   content: "";
 }
 .dropup .dropdown-menu,

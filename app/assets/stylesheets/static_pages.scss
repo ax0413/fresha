@@ -1,8 +1,49 @@
-.fresha-logo {
-    width: 6ex;
+.maintext {
+    display: inline-block;
 }
 
 .static-body {
   padding-top: 50px;
   padding-bottom: 20px;
+}
+
+.main-now {
+  & > a {
+    &:hover {
+      color: #085298n;
+      text-decoration: none;
+    }
+  }
+}
+
+.comment-now {
+  text-align: center;
+  & > div {
+    display: inline-block;
+  }
+  & > .rating {
+    & > .star-rating {
+      width: 100px;
+      height: 20px;
+    }
+  }
+  & > .comment {
+    max-width: 70%;
+    vertical-align: top;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    & a {
+      color: rgba(0, 0, 0, 0.5);
+      &:hover {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  }
+  
+  & > i {
+    color: rgba(0, 0, 0, 0.3);
+    vertical-align: top;
+  }
 }

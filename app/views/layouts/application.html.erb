@@ -8,25 +8,26 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <%= csrf_meta_tags %>
   <title>fresha</title>
 </head>
-<body class="container">
+<body>
   <div class="header clearfix">
        <%= link_to(main_path, class: 'navbar-brand') do %>
-         <h3 class="text-muted">fresha</h3>
+         <%= image_tag 'freshabrand', alt: 'fresha' %>
        <% end %>
+   
   
   <div id="myButton" class="pull-right">
       <%= link_to search_path do %>
-        <%= image_tag "search", alt: 'submit' %>
+        <%= image_tag "search2", alt: 'submit' %>
       <% end %>
      </div>
       
   </div>
-
-  <%= yield %>
-
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>

@@ -1,3 +1,3 @@
 class Comment < ActiveRecord::Base
-    belongs_to:loo
+    belongs_to :building
 end

@@ -1,7 +1,7 @@
 class Building < ActiveRecord::Base
     extend FriendlyId
     friendly_id :bname, use: :slugged
-    belongs_to :college
+    has_and_belongs_to_many :colleges
     has_many :comments
     
   def bok

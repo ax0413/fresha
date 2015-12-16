@@ -5,6 +5,7 @@ class CollegesController < ApplicationController
     
     def buildings
         slug = params[:slug]
-        @buildings = College.find_by(slug: slug).buildings.order(:bname)
+        @college = College.find_by(slug: slug)
+        @buildings = @college.buildings.order(:bname)
     end
 end

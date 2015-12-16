@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   get '/rank' => 'buildings#rank'
   get '/colleges' => 'colleges#index'
   get '/colleges/:slug/buildings' => 'colleges#buildings', as: 'college_buildings'
+  get '/buildings/rating/:id' => 'buildings#rating', as: 'building_rating'
   get ':controller(/:action(/:id))'
+  get '/pledge' => 'pledge#index'
+  get '/newcomment' => 'newcomment#index'
   post ':controller(/:action(/:id))'
 
   root 'static_pages#home'

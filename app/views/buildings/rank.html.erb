@@ -1,13 +1,21 @@
-<h1>랭킹</h1>
+<div class="clearfix row">
+    <div class="col-md-10">
+        <div class="pull-left">
+          <%= image_tag("award", class: 'rank-icon') %>
+          <span style="font-size: 20px;" "color: #646668;">랭킹</span>
+        </div>
+    </div>
+</div>
+
 
 <% @rank.each_with_index do |building, index| %>
-    <div class="rank-box well well-small">
+    <div class="rank-box well well-small" >
         <div class="row">
             <div class="col-xs-2">
                 <%=index+1%>위
             </div>
             <div class="col-xs-10">
-                <%= link_to(building.bname, building) %><br>
+                <%= link_to building.bname, building_path(building, from: 'rank'), style: 'color: #828282;' %><br>
             </div>
         </div>
     </div>

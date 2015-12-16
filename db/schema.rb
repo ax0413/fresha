@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203143554) do
+ActiveRecord::Schema.define(version: 20151212102020) do
 
   create_table "buildings", force: :cascade do |t|
     t.integer  "building_id"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20151203143554) do
   end
 
   add_index "buildings", ["slug"], name: "index_buildings_on_slug"
+
+  create_table "buildings_colleges", force: :cascade do |t|
+    t.integer  "building_id"
+    t.integer  "college_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "buildings_colleges", ["building_id"], name: "index_buildings_colleges_on_building_id"
+  add_index "buildings_colleges", ["college_id"], name: "index_buildings_colleges_on_college_id"
 
   create_table "colleges", force: :cascade do |t|
     t.string   "cname"
@@ -45,6 +55,12 @@ ActiveRecord::Schema.define(version: 20151203143554) do
     t.string   "floor"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+  end
+
+  create_table "quotes", force: :cascade do |t|
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

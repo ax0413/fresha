@@ -1,6 +1,6 @@
 class BuildingsController < ApplicationController
   def search
-    @search = Building.where("bname LIKE ?", "#{params[:search]}")
+    @search = Building.where("bname LIKE ?", "%#{params[:search]}%")
   end
   
   def show
@@ -30,7 +30,7 @@ class BuildingsController < ApplicationController
     @building = Building.find(params[:id])
     @building.avg=(@building.bok+@building.bun+@building.chung)/3
     @building.save
-    redirect_to :action => "show", :id => @building.slug
+    redirect_to building_path(@building.slug, params.slice(:from, :from_college))
   end
   
   def rating

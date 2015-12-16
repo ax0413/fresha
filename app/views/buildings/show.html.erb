@@ -1,97 +1,108 @@
 <div class="jumbotron">
   <div class="row">
-  <h1><%=@building.bname%></h1>
-  <p id="count"><%=((@building.bok+@building.chung+@building.bun)/3).round(2)%> 점 (<%=@building.comments.count%> 명)</p>
-  <div class="col-sm-7 col-sm-offset-3" style="margin-bottom: 20px;">
-    <div style="height:40px;">
-    <div style="width: 25%; float: left; vertical-align: middle; line-height: 40px;">
-  전체 평점
-  </div>
-  <div style="width: 75%; float: left;">
-  <span class="star-rating md">
-    <% 1.upto(5) do |i| %>
-      <% if i == ((@building.bok+@building.chung+@building.bun)/3).round(0) %>
-        <i class="on"></i>
-      <% else %>
-        <i></i>
+    <h2><%=@building.bname%></h2>
+    <p id="count"><%=((@building.bok+@building.chung+@building.bun)/3).round(2)%> 점 (<%=@building.comments.count%> 명)</p>
+    <div class="col-sm-7 col-sm-offset-3" style="margin-bottom: 20px;">
+      <div style="height:40px;">
+        <div style="width: 25%; float: left; vertical-align: middle; line-height: 40px;">
+          전체 평점
+        </div>
+        <div style="width: 75%; float: left;">
+          <span class="star-rating md">
+            <% 1.upto(5) do |i| %>
+              <% if i == ((@building.bok+@building.chung+@building.bun)/3).round(0) %>
+                <i class="on"></i>
+              <% else %>
+                <i></i>
+              <% end %>
+            <% end %>
+          </span>
+        </div>
+      </div>
+      <div style="width:100%; height: 1px; background-color: lightgray; margin: 3px 0 10px 0">&nbsp;</div>
+      <div style="height:40px;">
+        <div style="width:25%; float: left; height: 40px; line-height: 40px;">
+          한산함 
+        </div>
+        <div style="width: 75%; float: left; height: 40px;">
+          <span class="star-rating md">
+            <% 1.upto(5) do |i| %>
+              <% if i == @building.bok.round(0) %>
+                <i class="on"></i>
+              <% else %>
+                <i></i>
+              <% end %>
+            <% end %>
+          </span>
+        </div>
+      </div>
+      <div style="height:40px;">
+        <div style="width:25%; float: left; height: 40px; line-height: 40px;">  
+          청결도
+        </div>
+        <div style="width: 75%; float: left; height: 40px;">
+          <span class="star-rating md">
+            <% 1.upto(5) do |i| %>
+              <% if i == @building.chung.round(0) %>
+                <i class="on"></i>
+              <% else %>
+                <i></i>
+              <% end %>
+            <% end %>
+          </span>
+        </div>
+      </div>
+      <div style="height:40px;">
+        <div style="width:25%; float: left; height: 40px; line-height: 40px;"> 
+          분위기
+        </div>
+        <div style="width: 75%; float: left; height: 40px;">
+          <span class="star-rating md">
+            <% 1.upto(5) do |i| %>
+              <% if i == @building.bun.round(0) %>
+                <i class="on"></i>
+              <% else %>
+                <i></i>
+              <% end %>
+            <% end %>
+          </span>
+        </div>
+      </div>
+      <% p=0 %>
+      <% @building.comments.each do |c| %>
+        <% p+= c.bidet %>
       <% end %>
-    <% end %>
-  </span>
-  </div>
-  </div>
-  <div style="width:100%; height: 1px; background-color: lightgray; margin: 3px 0 10px 0">&nbsp;</div>
-  <div style="height:40px;">
-  <div style="width:25%; float: left; height: 40px; line-height: 40px;">
-  복잡도 
-  </div>
-  <div style="width: 75%; float: left; height: 40px;">
-  <span class="star-rating md">
-    <% 1.upto(5) do |i| %>
-      <% if i == @building.bok.round(0) %>
-        <i class="on"></i>
-      <% else %>
-        <i></i>
+      <% if p!=0%>
+        <br>
+        <p class= text-infom style="font-size: 18px;"> 비데가 사용된 적 있는 화장실입니다 </p>
       <% end %>
-    <% end %>
-  </span>
+    </div>
   </div>
-  </div>
-  <div style="height:40px;">
-  <div style="width:25%; float: left; height: 40px; line-height: 40px;">  
-  청결도
-  </div>
-  <div style="width: 75%; float: left; height: 40px;">
-  <span class="star-rating md">
-    <% 1.upto(5) do |i| %>
-      <% if i == @building.chung.round(0) %>
-        <i class="on"></i>
-      <% else %>
-        <i></i>
+  <% if @bidetfloor.count > 0 %>
+    <p class= text-info style="font-size: 18px;">비데가 확인 된 곳<br>
+      <% @bidetfloor.each do |c| %>
+        <%=c+'층'  %>
       <% end %>
-    <% end %>
-  </span>
-  </div>
-  </div>
-  <div style="height:40px;">
-  <div style="width:25%; float: left; height: 40px; line-height: 40px;"> 
-  분위기
-  </div>
-  <div style="width: 75%; float: left; height: 40px;">
-  <span class="star-rating md">
-    <% 1.upto(5) do |i| %>
-      <% if i == @building.bun.round(0) %>
-        <i class="on"></i>
-      <% else %>
-        <i></i>
-      <% end %>
-    <% end %>
-  </span>
-  </div>
-  </div>
-  <% p=0%>
-  <% @building.comments.each do |c| %>
-    <% p+= c.bidet %>
+    </p>
   <% end %>
-  <% if p!=0%>
-    <p class= text-info>비데가 사용된 적 있는 화장실입니다.</p>
+  <% if params[:from] == 'rank' %>
+    <% go_back_path = rank_path %>
+  <% elsif params[:from] == 'colleges' %>
+    <% go_back_path = college_buildings_path(params[:from_college]) %>
+  <% else %>
+    <% go_back_path = main_path %>
   <% end %>
-  <p class= text-info>비데가 확인 된 곳<br>
-  <% @bidetfloor.each do |c| %>
-    <%=c+'층'  %>
-  <% end %>
-  </p>
-  
-  </div>
-  <a href='/buildings/rating/<%=@building.id %>' class='btn btn-success'>평가하기</a>
-  <a href='/buildings' class='btn btn-warning'>뒤로가기</a>
-
-  </div>
+  <% go_back_params = params.slice(:from, :from_college) %> 
+  <%= link_to '평가하기', building_rating_path(@building.id, go_back_params), class: 'btn btn-lg btn-success hidden-xs btn-show' %>
+  <%= link_to '뒤로가기', go_back_path, class: 'btn btn-lg btn-warning hidden-xs btn-show2' %>
+  <%= link_to '평가하기', building_rating_path(@building.id, go_back_params), class: 'btn btn-success visible-xs-inline btn-show' %>
+  <%= link_to '뒤로가기', go_back_path, class: 'btn btn-warning visible-xs-inline btn-show2' %>
 </div>
 
 <div class="row">
   <div class="col-lg-12">
     <% @building.comments.reverse.each do |c| %>
-      <div class="well">
+      <div class="well" id="comment-<%= c.id %>">
         <span class="star-rating small">
           <% 1.upto(5) do |i| %>
             <% if i == (c.bok+c.chung+c.bun)/3 %>
@@ -103,10 +114,12 @@
         </span>
         <br>
         <%=c.created_at.in_time_zone("Seoul").strftime('%F %T에 작성')%>
-        <p class='text-warning'><<%='사용한 곳: '+c.floor+'층'%>></p>
+        <div class="clearfix">
+        <p class='pull-left'><<%='사용한 곳: '+c.floor+'층'%>></p>
         <%if c.bidet==1%>
-        <p class='text-info'><비데 사용자></p>
+        <p class='text-info pull-left'><비데 사용자></p>
         <% end %>
+        </div>
         <p><%=c.comment%></p>
       </div>
     <% end %>

@@ -1,10 +1,24 @@
-<h1>검색</h1>
-<div>
-  <form action:'/search'>
-  <input type='string' name='search' placeholder='입력'>
-  <input type='submit'>
-  </form>
+
+<div class="clearfix row">
+    <div class="col-md-10">
+        <div class="pull-left">
+          <%= image_tag("searchicon", class: 'rank-icon') %>
+          <span style="font-size: 20px;" "color: #646668;">검색</span>
+        </div>
+    </div>
 </div>
+<br>
+<div class="row">
+ <div class="col-md-6">
+    <form action="/search" class="input-group">
+         <input type="string"  name= 'search' class="form-control" placeholder="당신이 찾는 화장실은...">
+          <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </form>
+  </div>
+</div>
+<br>
 <% @search.each do |building| %>
-  <%= link_to(building.bname, building) %><br>
+<%= link_to(building.bname, building) %><br>
 <% end %>

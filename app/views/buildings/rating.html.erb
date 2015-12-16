@@ -1,26 +1,26 @@
 <div class="jumbotron">
-  <h1><%=@building.bname%></h1>
+  <h2><%=@building.bname%></h2>
   <p id="count"><%=((@building.bok+@building.chung+@building.bun)/3).round(1)%> 점 (<%=@building.comments.count%> 명)</p>
 
   <%=form_tag "/buildings/ev", method: "post" do %>
     <input type="hidden" name="id" value="<%=@building.id%>">
-    <h1>복잡도</h1>
+    <h3>한산함</h3>
     <span class="star-rating">
       <input type="radio" name="rating" value="1"><i></i>
       <input type="radio" name="rating" value="2"><i></i>
       <input type="radio" name="rating" value="3"><i></i>
       <input type="radio" name="rating" value="4"><i></i>
       <input type="radio" name="rating" value="5"><i></i>
-    </span><br>
-    <h1>청결도</h1>
+    </span>
+    <h3>청결도</h3>
     <span class="star-rating">
       <input type="radio" name="rating2" value="1"><i></i>
       <input type="radio" name="rating2" value="2"><i></i>
       <input type="radio" name="rating2" value="3"><i></i>
       <input type="radio" name="rating2" value="4"><i></i>
       <input type="radio" name="rating2" value="5"><i></i>
-    </span><br>
-    <h1>분위기</h1>
+    </span>
+    <h3>분위기</h3>
     <span class="star-rating">
       <input type="radio" name="rating3" value="1"><i></i>
       <input type="radio" name="rating3" value="2"><i></i>
@@ -28,6 +28,9 @@
       <input type="radio" name="rating3" value="4"><i></i>
       <input type="radio" name="rating3" value="5"><i></i>
     </span><br><br>
+    <% params.slice(:from, :from_college).each do |k, v| %>
+      <input type="hidden" name="<%= k %>" value="<%= v %>">
+    <% end %>
     <input type='hidden' name='bidet' value='0'>
     <input type='checkbox' name='bidet' value='1'>비데를 사용했으면 체크하세요<br>
     <input type='string' name='floor' placeholder='?' size='2'>층
